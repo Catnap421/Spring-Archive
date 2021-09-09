@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/graphql" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-GraphQL" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-JPA" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

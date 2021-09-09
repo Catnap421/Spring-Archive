@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "com.netflix.dgs.codegen" version '5.0.6'
+}
+
+group = 'netflix'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
+    implementation "com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter"
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+generateJava{
+    schemaPaths = ["${projectDir}/src/main/resources/schema"] // List of directories containing schema files
+    packageName = 'netflix.springgraphql' // The package name to use to generate sources
+    generateClient = true // Enable generating the type safe query API
+}
+
+allprojects {
+    afterEvaluate {
+        bootJar {
+            classpath configurations.developmentOnly
+        }
+    }
+}
+
+bootBuildImage {
+    imageName = "catnap/docker-spring:latest"
+}
+

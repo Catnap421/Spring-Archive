@@ -5,17 +5,18 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.4.2.Final/e55bd90d51cddd638c07d5bd89fc7535d4e3d069/mapstruct-processor-1.4.2.Final.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.4.5/adadfe2ded50ef04fcc50c66d9694230c7dc021b/spring-boot-configuration-processor-2.4.5.jar" />
         </processorPath>
-        <module name="bolierplate.main" />
+        <module name="Spring-GraphQL.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bolierplate" target="11" />
       <module name="bolierplate.main" target="11" />
       <module name="bolierplate.test" target="11" />
+      <module name="graphql" target="11" />
+      <module name="graphql.main" target="11" />
+      <module name="graphql.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
