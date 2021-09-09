@@ -1,0 +1,19 @@
+type Query {
+    singers(name: String) : [Singer]
+    singersBySameAge(name: String): [Singer]
+}
+
+type Singer {
+    name: String
+    age: Int
+    gender: Gender
+    followers: [Follower]
+}
+
+type Follower {
+    nickname: String
+}
+
+enum Gender {
+    MALE, FEMALE
+}
