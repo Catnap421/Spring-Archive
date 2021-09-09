@@ -1,6 +1,7 @@
 package netflix.springgraphql.domain.repository;
 
 import netflix.springgraphql.domain.type.Follower;
+import netflix.springgraphql.domain.type.Gender;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
@@ -16,7 +17,8 @@ public class SimpleFollowerRepository implements FollowerRepository {
 
     @PostConstruct
     void init() {
-        followerMap.put("아이유", Arrays.asList(Follower.builder().nickname("아이유팬1").build(), Follower.builder().nickname("아이유팬1").build()));
+        followerMap.put("아이유", Arrays.asList(Follower.builder().nickname("아이유팬1").gender(Gender.FEMALE).build(),
+                Follower.builder().nickname("아이유팬2").gender(Gender.MALE).build()));
     }
 
     @Override
