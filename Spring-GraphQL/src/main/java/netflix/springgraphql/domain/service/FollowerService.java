@@ -16,4 +16,8 @@ public class FollowerService {
     public List<Follower> followersForSinger(final String name) {
         return followerRepository.findFollowerForSinger(name);
     }
+
+    public List<Follower> findAll(){
+        return followerRepository.findFollowers();
+    }
 }

@@ -1,6 +1,7 @@
 type Query {
     singers(name: String) : [Singer]
     singersBySameAge(name: String): [Singer]
+    followers(name: String) : [Follower]
 }
 
 type Singer {

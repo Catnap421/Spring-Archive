@@ -5,10 +5,8 @@ import netflix.springgraphql.domain.type.Gender;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Repository
 public class SimpleFollowerRepository implements FollowerRepository {
@@ -24,5 +22,10 @@ public class SimpleFollowerRepository implements FollowerRepository {
     @Override
     public List<Follower> findFollowerForSinger(final String name) {
         return followerMap.get(name);
+    }
+
+    @Override
+    public List<Follower> findFollowers() {
+        return followerMap.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
     }
 }

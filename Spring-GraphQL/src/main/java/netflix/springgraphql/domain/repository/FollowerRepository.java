@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface FollowerRepository {
     List<Follower> findFollowerForSinger(String name);
+    List<Follower> findFollowers();
 }

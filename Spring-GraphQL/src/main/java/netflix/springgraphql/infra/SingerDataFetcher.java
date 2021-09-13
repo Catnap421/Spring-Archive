@@ -49,5 +49,13 @@ public class SingerDataFetcher {
         Singer singer = dfe.getSource();
         return followerService.followersForSinger(singer.getName());
     }
+
+    @DgsData(parentType = "Query", field = "followers")
+    public List<Follower> findFollowers(@InputArgument("name") String name){
+        if(StringUtils.isEmpty(name)) {
+            return followerService.findAll();
+        }
+        return followerService.followersForSinger(name);
+    }
 }
 
